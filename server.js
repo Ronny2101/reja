@@ -27,6 +27,6 @@ app.get("/gift", function (req, res) {
 
 const server = http.createServer(app);
 let PORT = 3000;
-server.listen(PORT, function (req,res) {
+server.listen(PORT, function () {
     console.log(`The server is running succesfully on port: ${PORT}`);
 });
