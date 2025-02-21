@@ -36,16 +36,30 @@
 console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
-const http = require("http");
 const res = require("express/lib/response");
+const http = require("http");
+//const res = require("express/lib/response");
 const fs = require("fs");
+const path = require("path");
 
 let user;
-fs.readFile("database/user.json", "utf8",(err,data) => {
-    if(err) {
-        console.log("ERROR",err);
-    } else{
-        user = JSON>parseFloat(data)
+// fs.readFile("database/user.json", "utf8",(err,data) => {
+//     if(err) {
+//         console.log("ERROR",err);
+//     } else{
+//         user = JSON.parse(data)
+//     }
+// });
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if (err) {
+        console.error("Fayl o‘qishda xatolik:", err);
+        return;
+    }
+    try {
+        user = JSON.parse(data);
+        console.log("User ma’lumoti:", user);
+    } catch (error) {
+        console.error("JSON parse xatosi:", error);
     }
 });
 
@@ -58,7 +72,11 @@ app.use(express.urlencoded({ extended: true}));
 
 //2Session code 
 //3Views code
-app.set("views", "views");
+// app.set("views", "views");
+// app.set("view engine", "ejs");
+
+ 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 //4 
@@ -66,7 +84,8 @@ app.post("/create-item", (req, res) => {
     //TODO: code with db here
 });
 
-app.get("/author", (req,res) => {
+app.get("/author", (req, res) => {
+   // res.send("Hello Author");
     res.render("author",{user: user });
 });
 
