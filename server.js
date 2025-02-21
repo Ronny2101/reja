@@ -37,6 +37,17 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
 const http = require("http");
+const res = require("express/lib/response");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf8",(err,data) => {
+    if(err) {
+        console.log("ERROR",err);
+    } else{
+        user = JSON>parseFloat(data)
+    }
+});
 
  
 
@@ -52,9 +63,13 @@ app.set("view engine", "ejs");
 
 //4 
 app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({test:"succes"});
+    //TODO: code with db here
 });
+
+app.get("/author", (req,res) => {
+    res.render("author",{user: user });
+});
+
 app.get("/", function (req, res) {
     res.render("harid");
 });

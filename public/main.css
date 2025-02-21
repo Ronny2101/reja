@@ -1,0 +1,59 @@
+.main_frame{
+position: absolute;
+width: 1440px; 
+height: 1315px;
+display: flex;
+flex-direction:row;
+align-items: center;
+margin-top: 2px;
+background-color: rgb(28, 29, 25);
+
+
+}
+.main_frame.left_frame{
+    position: absolute;
+    width: 305px;
+    height: 1315px;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: aliceblue;
+
+     
+}
+
+
+.main_frame.midd_frame{
+    position: absolute;
+    width: 970px;
+    height: 653px;
+    margin-left: 335px;
+    margin-right: 135px;
+    margin-top: 605px;
+    margin-bottom: 57px;
+    display: flex;
+    flex-direction:column;
+    background-color: rgb(228, 35, 35);
+}    
+
+.main_frame.right_frame{
+    position: relative;
+    width: 108px;
+    height: 1315px;
+    margin-left: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    background-color: rgb(225, 16, 16);
+
+}
+
+.main_frame.left_1 {
+    position: absolute;
+width: 219px;
+height: 281px;
+margin-left: 40px;
+margin-right: 46px;
+margin-top: 50px;
+margin-bottom: 984px;
+}
