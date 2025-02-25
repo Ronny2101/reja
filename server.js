@@ -43,25 +43,25 @@ const fs = require("fs");
 const path = require("path");
 
 let user;
-// fs.readFile("database/user.json", "utf8",(err,data) => {
-//     if(err) {
-//         console.log("ERROR",err);
-//     } else{
-//         user = JSON.parse(data)
+fs.readFile("database/user.json", "utf8",(err,data) => {
+     if(err) {
+         console.log("ERROR",err);
+     } else{
+         user = JSON.parse(data)
+     }
+ });
+// fs.readFile("database/user.json", "utf8", (err, data) => {
+//     if (err) {
+//         console.error("Fayl oqishda xatolik:", err);
+//         return;
+//     }
+//     try {
+//         user = JSON.parse(data);
+//         console.log("User malumoti:", user);
+//     } catch (error) {
+//         console.error("JSON parse xatosi:", error);
 //     }
 // });
-fs.readFile("database/user.json", "utf8", (err, data) => {
-    if (err) {
-        console.error("Fayl o‘qishda xatolik:", err);
-        return;
-    }
-    try {
-        user = JSON.parse(data);
-        console.log("User ma’lumoti:", user);
-    } catch (error) {
-        console.error("JSON parse xatosi:", error);
-    }
-});
 
  
 
@@ -76,8 +76,8 @@ app.use(express.urlencoded({ extended: true}));
 // app.set("view engine", "ejs");
 
  
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+ app.set("views", path.join(__dirname, "views"));
+ app.set("view engine", "ejs");
 
 //4 
 app.post("/create-item", (req, res) => {
@@ -86,7 +86,7 @@ app.post("/create-item", (req, res) => {
 
 app.get("/author", (req, res) => {
    // res.send("Hello Author");
-    res.render("author",{user: user });
+    res.render("author",{ user: user });
 });
 
 app.get("/", function (req, res) {
