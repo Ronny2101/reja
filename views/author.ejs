@@ -1,187 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-</head>
-<body>
-<div class="frame">
-    <div class="main_frame">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <div class="main_frame">
         <div class="left_frame">
-            <div class="left_1">
-                <div class="rasm">
-                    <img src="imagess/profile.png" width="156px;" height="142px" alt="bu yerda rasm bor">
+          <div class="left_1">
+            <div class="left_1_1">
+              <img
+                src="icon/midd/Profile.jpeg"
+                alt=""
+                width="156px"
+                height="142px"
+              />
+            </div>
+            <div class="left_1_2"><%=user.name%></div>
+            <div class="left_1_3"><%=user.profession%></div>
+            <div class="left_icons">
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (12).svg" class="icon-1" />
                 </div>
-                <div class="ism">
-                    <%= user.name%> 
+              </a>
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (13).svg" class="icon-1" />
                 </div>
-                <div class="kasb">
-                    <%= user.profession%>
+              </a>
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (14).svg" class="icon-1" />
                 </div>
-                <div class="left_icons">
-                    <a class="smile" href="">
-                        <div class="icon">
-                            <img src="icon/Vector (1).svg" class="icon_1" />
-                        </div>
-                        </a>
-                    <a class="smile" href="">
-                        <div class="icon">
-                            <img src="icon/Vector (2).svg" class="icon_1" />
-                        </div>
-                        </a>
-                        <a class="smile" href="">
-                            <div class="icon">
-                             <img src="icon/Vector (3).svg" class="icon_1" />
-                        </div>
-                        </a>
-                        <a class="smile" href="">
-                            <div class="icon">
-                             <img src="icon/Vector (4).svg" class="icon_1" />
-                        </div>
-                        </a>
-                        <a class="smile" href="">
-                            <div class="icon">
-                             <img src="icon/Vector (5).svg" class="icon_1" />
-                        </div>     
-                       </a>
-                        <a class="smile" href="">
-                            <div class="icon">
-                             <img src="icon/Vector (6).svg" class="icon_1" />
-                        </div>
-                        </a>
+              </a>
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (15).svg" class="icon-1" />
                 </div>
+              </a>
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (16).svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="link_href" href="">
+                <div class="icon">
+                  <img src="icon/midd/Vector (17).svg" class="icon-1" />
+                </div>
+              </a>
             </div>
-            <div class="marginer"></div>
-            <div class="left_2">
-                <div class="info_containor">
-                <div class="left_about"> <div class="left_about_a">Age</div></div>
-                <div class="left_about_b"> <%= user.age%> </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_2">
+            <div class="left_2_1">
+              <div class="age">Age:</div>
+              <div class="age_1"><%=user.age%></div>
             </div>
-                <div class="info_containor"> 
-                <div class="left_about"> <div class="left_about_a">Residence</div></div>
-                <div class="left_about_b"> <%= user.residence%> </div>
+            <div class="left_2_1">
+              <div class="residence">Residence:</div>
+              <div class="residence_1"><%=user.residence%></div>
             </div>
-                <div class="info_containor"> 
-                <div class="left_about"> <div class="left_about_a">Freelance</div></div>
-                <div class="left_about_b">Available</div>
+            <div class="left_2_1">
+              <div class="freelance">Freelance:</div>
+              <div class="freelance_1">Available</div>
             </div>
-                <div class="info_containor"> 
-                <div class="left_about"> <div class="left_about_a">Address</div></div>
-                <div class="left_about_b"> <%= user.address%> </div>
+            <div class="left_2_1">
+              <div class="address">Address:</div>
+              <div class="address_1"><%=user.address%></div>
             </div>
-        </div>
-            <div class="marginer"></div>
-            <div class="left_3">
-                <div class="lang_container">Languages</div>
-                <div class="lang_info"> <%= user.language[0]%>100% </div>
-                <div class="lang_info_1"><img src="imagess/line/Rectangle 7.png" ></div>
-                <div class="lang_info"> <%= user.language[1]%> 80%</div>
-                <div class="lang_info_1"><img src="imagess/line/Rectangle 9.png" ></div>
-                <div class="lang_info"> <%= user.language[2]%> 65% </div>
-                <div class="lang_info_1"><img src="imagess/line/Rectangle 11.png" ></div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_3">
+            <h1 class="lang">Languages</h1>
+            <div class="lang_1">
+              <div class="lang_1_1"><%=user.language[0]%></div>
+              <div class="lang_1_1">100%</div>
             </div>
-            <div class="marginer"></div>
-            <div class="left_4">
-                <div class="skills_container">Skills</div>
-                <div class="skills_info"> <%= user.skills[0]%> </div>
-                <div class="skills_info_1"><img src="imagess/line/Rectangle 15.png" ></div>
-                 
-                <div class="skills_info"> <%= user.skills[1]%> </div>
-                <div class="skills_info_1"><img src="imagess/line/Rectangle 16.png" ></div>
-                 
-                <div class="skills_info"> <%= user.skills[2]%> </div>
-                <div class="skills_info_1"><img src="imagess/line/Rectangle 17.png" ></div>
-                 
-                <div class="skills_info"> <%= user.skills[3]%> </div>
-                <div class="skills_info_1"><img src="imagess/line/Rectangle 19.png" ></div>
-                 
-                <div class="skills_info"> <%= user.skills[4]%> </div>
-                <div class="skills_info_1"><img src="imagess/line/Rectangle 21.png" ></div>
-                 
+            <div class="margin_left_3"></div>
+            <div class="lang_1">
+              <div class="lang_1_1"><%=user.language[1]%></div>
+              <div class="lang_1_1">80%</div>
             </div>
-            <div class="marginer"></div>
-            <div class="left_5">
-                 <div class="extra_info">Exstra skills</div>
-                 <div class="extra_info_1">
-                    <img src="imagess/Icons (1).svg" > <%=user.extra_skills[1]%>, <%=user.extra_skills[2]%>
-                 </div>
-                 <div class="extra_info_1">
-                    <img src="imagess/Icons (2).svg" > <<%=user.extra_skills[3]%>, <%=user.extra_skills[4]%>
-                 <div class="extra_info_1">
-                    <img src="imagess/Icons (3).svg" > <%=user.extra_skills[5]%>, <%=user.extra_skills[6]%>
-                 </div>
-                 <div class="extra_info_1">
-                    <img src="imagess/Icons (4).svg" > <%=user.extra_skills[7]%>
-                 </div>
+            <div class="margin_left_3_2">
+              <div class="mar_left_3_2"></div>
             </div>
-            <div class="marginer"></div>
-             
+            <div class="lang_1">
+              <div class="lang_1_1"><%=user.language[2]%></div>
+              <div class="lang_1_1">60%</div>
+            </div>
+            <div class="margin_left_3_3">
+              <div class="mar_left_3_3"></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_4">
+            <h1 class="skill">Skills</h1>
+            <div class="skill_1">
+              <div class="skill_1_1"><%=user.skills[0]%></div>
+              <div class="skill_1_1">90%</div>
+            </div>
+            <div class="margin_left_4">
+                <div class="mar_left_4"></div>
+            </div>
+            <div class="skill_1">
+              <div class="skill_1_1"><%=user.skills[1]%></div>
+              <div class="skill_1_1">85%</div>
+            </div>
+            <div class="margin_left_4_1">
+              <div class="mar_left_4_1"></div>
+            </div>
+            <div class="skill_1">
+              <div class="skill_1_1"><%=user.skills[2]%></div>
+              <div class="skill_1_1">80%</div>
+            </div>
+            <div class="margin_left_4_2">
+              <div class="mar_left_4_2"></div>
+            </div>
+            <div class="skill_1">
+              <div class="skill_1_1"><%=user.skills[3]%></div>
+              <div class="skill_1_1">75%</div>
+            </div>
+            <div class="margin_left_4_3">
+              <div class="mar_left_4_3"></div>
+            </div>
+            <div class="skill_1">
+              <div class="skill_1_1"><%=user.skills[4]%></div>
+              <div class="skill_1_1">85%</div>
+            </div>
+            <div class="margin_left_4_4">
+              <div class="mar_left_4_4"></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_5">
+            <h1 class="extra">Extra Skills</h1>
+            <div class="extra_1">
+              <img src="icon/midd/Icons.png" />
+              <div class="extra_info"><%=user.extra_skills[0]%></div>
+            </div>
+            <div class="extra_1">
+              <img src="icon/midd/Icons.png" />
+              <div class="extra_info"><%=user.extra_skills[1]%></div>
+            </div>
+            <div class="extra_1">
+              <img src="icon/midd/Icons.png" />
+              <div class="extra_info"><%=user.extra_skills[2]%></div>
+            </div>
+            <div class="extra_1">
+              <img src="icon/midd/Icons.png" />
+              <div class="extra_info"><%=user.extra_skills[3]%></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
         </div>
         <div class="midd_frame">
-            <div class="top">
-                <div class="midd_rasm">
-                    <img src="imagess/Your Image 1.png" >
-                </div>
-                <div class="midd_button">
-                    <img src="imagess/Button_Hire me.png" >
-                </div>
-                <div class="top_info"><%=user.work_place%></div>
-                <div class="top_info1"><%=user.service_desc%></div>
+          <div class="midd_top">
+            <div class="midd_top_left">
+              <div class="work_place"><%=user.work_place%></div>
+              <div class="service_desc"><%=user.service_desc%></div>
+              <button class="botton">HIRE ME -></button>
             </div>
-            <div class="bottom">
-                <div class="bottom_info"> <%=user.work_place%></div>
-                <div class="bottom_info_1"> <%=user.about_me%></div>
-                <div class="flex_container">
-                    <div class="box_png">
-                        <img src="icon/midd/Icons_coding.png"  class="icons_midd">
-                        <img src="icon/yozuv/web development.png" class="icon_y">
-                        <img src="icon/end/1.png" class="icon_e">
-                    </div>
-                    <div class="box_png">
-                        <img src="icon/midd/Vector (1).png"  class="icons_midd">
-                        <img src="icon/yozuv/2.png" class="icon_y">
-                        <img src="icon/end/2.png" class="icon_e">
-                    </div>
-                    <div class="box_png">
-                        <img src="icon/midd/Icons_Microphone.png"  class="icons_midd">
-                        <img src="icon/yozuv/sound design.png" class="icon_y">
-                        <img src="icon/end/3.png" class="icon_e">
-                    </div>
-                    <div class="box_png">
-                        <img src="icon/midd/Icons_game-development.png"  class="icons_midd">
-                        <img src="icon/yozuv/game design.png" class="icon_y">
-                        <img src="icon/end/4.png" class="icon_e">
-                    </div>
-                    <div class="box_png">
-                        <img src="icon/midd/Vector (2).png"  class="icons_midd">
-                        <img src="icon/yozuv/photography.png" class="icon_y">
-                        <img src="icon/end/5.png" class="icon_e">
-                    </div>
-                    <div class="box_png">
-                        <img src="icon/midd/advertising.png" class="icons_midd">
-                        <img src="icon/yozuv/6.png" class="icon_y">
-                        <img src="icon/end/6.png" class="icon_e">
-                    </div>
-
-                </div>
+            <div class="midd_top_right">
+              <img src="icon/midd/Your Image 1.jpeg" alt="" />
             </div>
+            <div class="ellips_15">
+              <img src="icon/midd/Ellipse 15.svg" alt="" />
+            </div>
+            <div class="ellips_12">
+              <img src="icon/midd/Ellipse 12.svg" alt="" />
+            </div>
+            <div class="ellips_16">
+              <img src="icon/midd/Ellipse 16.svg" alt="" />
+            </div>
+            <div class="polygon">
+              <img src="icon/midd/Polygon 1.svg" alt="" />
+            </div>
+            <div class="rectangle_1">
+              <img src="icon/midd/Rectangle 52.svg" alt="" />
+            </div>
+            <div class="rectangle">
+              <img src="icon/midd/Rectangle 51.svg" alt="" />
+            </div>
+            <div class="ellips_13">
+              <img src="icon/midd/Ellipse 15.svg" alt="" />
+            </div>
+          </div>
+          <div class="midd_bottom">
+            <div class="midd_bottom_name"><%=user.work_place%></div>
+            <div class="service_desc"><%=user.service_desc%></div>
+            <div class="agrguments">
+              <div class="boxes">
+                <img class="img" src="icon/midd/1.png" alt="" />
+                <div class="web">Web Development</div>
+                <div class="blog">Blog, E-commerce</div>
+              </div>
+              <div class="boxes">
+                <img src="icon/midd/2.png" alt="" />
+                <div class="web">UI/UX Design</div>
+                <div class="blog">Mobile, Website Design</div>
+              </div>
+              <div class="boxes">
+                <img src="icon/midd/3.png" alt="" />
+                <div class="web">Sound Design</div>
+                <div class="blog">Voice Over, Beat making</div>
+              </div>
+              <div class="boxes" style="margin-top: 20px">
+                <img src="icon/midd/4.png" alt="" />
+                <div class="web">Game Design</div>
+                <div class="blog">Character Design, Props & Objects</div>
+              </div>
+              <div class="boxes" style="margin-top: 20px">
+                <img src="icon/midd/5.png" alt="" />
+                <div class="web">Photography</div>
+                <div class="blog">Portait, Product Photography</div>
+              </div>
+              <div class="boxes" style="margin-top: 20px">
+                <div class="adv">Advertising</div>
+                <div class="lorem">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  quae provident blanditiis nisi, tenetur perspiciatis.
+                </div>
+                <div class="click">ORDER NOW ></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="right_frame">
             <div class="moon">
-                <img src="imagess/line/Icons_Contrast.svg" >
+                <img src="icon/midd/Vector (18).svg" >
             </div>
-            <div class="home">
-                <img src="imagess/line/Menu.png" >
+            <div class="right_home ">
+                <img src="icon/midd/Menu.svg" >
             </div>
         </div>
+      </div>
     </div>
-</div>
- 
-    
-</body>
-
+  </body>
 </html>
