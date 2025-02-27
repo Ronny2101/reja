@@ -50,20 +50,9 @@ fs.readFile("database/user.json", "utf8",(err,data) => {
          user = JSON.parse(data)
      }
  });
-// fs.readFile("database/user.json", "utf8", (err, data) => {
-//     if (err) {
-//         console.error("Fayl oqishda xatolik:", err);
-//         return;
-//     }
-//     try {
-//         user = JSON.parse(data);
-//         console.log("User malumoti:", user);
-//     } catch (error) {
-//         console.error("JSON parse xatosi:", error);
-//     }
-// });
-
- 
+  
+//MongoDb connect
+const db = require("./server").db();
 
 //1 Kirish code
 app.use(express.static("public"));
@@ -81,21 +70,39 @@ app.use(express.urlencoded({ extended: true}));
 
 //4 
 app.post("/create-item", (req, res) => {
-    //TODO: code with db here
+     console.log(req.body);
+     const new_reja = req.body.reja;
+      db.collection("plans").insertOne({reja: new_reja}, (err, data)  => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong");
+        } else {
+            res.end("succesfully added");
+        }
+      })
 });
 
-app.get("/author", (req, res) => {
-   // res.send("Hello Author");
-    res.render("author",{ user: user });
-});
+// app.get("/author", (req, res) => {
+//    // res.send("Hello Author");
+//     res.render("author",{ user: user });
+// });
 
 app.get("/", function (req, res) {
-    res.render("harid");
+    console.log("user entered/");
+    db.collection("plans")
+    .find()
+    .toArray(err,data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong");
+        } else {
+            console.log(data);
+            res.render("reja",{items:data});
+              
+        }
+    }
+    
 });
 
 
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-    console.log(`The server is running succesfully on port: ${PORT}`);
-});
+ module.exports = app;

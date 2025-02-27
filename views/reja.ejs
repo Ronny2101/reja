@@ -19,7 +19,7 @@
             <div class="d-flex align-items-center">
                 <input 
                 id="create-field"
-                name="item"
+                name="reja"
                 autofocus
                 autocomplete="off"
                 class="form-control mr-3"
@@ -27,7 +27,24 @@
                 style="flex: 1"
                 />
                 <button class="btn btn-primary" style="border-radius:20px">
-                    Yangi Harid qoshish</button>
+                    Yangi reja qoshish</button>
+
+                <button id="clean-all" class="btn btn-danger" style="border-radius:20px">
+                    Hammasini o'chirish</button>  
+                 
+                    <ul id="item-list" class="lift-group pb-5" >
+                        <% items.map(function(item) { %>
+                        <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+                             
+            
+                            <span class="item-text"><% item.reja%></span>
+                            <div>
+                                <button class="delete-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
+                                <button class="delete-me btn btn-danger btn-sm ">O'chirish</button>
+                            </div>
+                        </li>
+                        <% })%>
+                    </ul>
             </div>
         </form>
     </div>
