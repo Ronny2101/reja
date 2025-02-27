@@ -5,11 +5,11 @@ let db;
 const connectionString = "mongodb+srv://dilshoddaminov2121:Zza4FtRyNhoAE4wI@cluster0.hesqy.mongodb.net/REJA";
 
 mongodb.connect(connectionString, {
-        useNewUrlParser:true;
-        useUnifiedTopology:true;
-},
-    (err,client) => {
-        iff (err) console.log("ERROR on connection MongoDB");
+        useNewUrlParser:true,
+        useUnifiedTopology:true,
+}, 
+(err, client) => {
+        if (err) console.log("ERROR on connection MongoDB");
         else {
             console.log("MongoDB connection succed");
             module.exports = client;
@@ -24,5 +24,3 @@ mongodb.connect(connectionString, {
     }
 
 );
-
-

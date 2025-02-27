@@ -91,7 +91,7 @@ app.get("/", function (req, res) {
     console.log("user entered/");
     db.collection("plans")
     .find()
-    .toArray(err,data) => {
+    .toArray((err,data) => {
         if (err) {
             console.log(err);
             res.end("something went wrong");
@@ -100,7 +100,7 @@ app.get("/", function (req, res) {
             res.render("reja",{items:data});
               
         }
-    }
+    });
     
 });
 
