@@ -141,3 +141,25 @@
 // }
 
 // console.log(countLetter("e","engineer"));
+
+
+// const liste = ["ad2a54y79wet0sfgb9"];
+// const digits = liste[0].split('').filter((char) => {
+//   return char === '';
+// });
+
+
+
+
+function countDigits(str) {
+     let count = 0;
+     for (let i = 0; i< str.length; i++) {
+          if (str[i] >= '0' || str[i]<='9') {
+               count++;
+          }
+     }
+     return count;
+}
+
+console.log(countDigits("guyd7e27736764gdyg"));
+ 
