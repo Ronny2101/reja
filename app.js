@@ -70,7 +70,7 @@ app.use(express.urlencoded({ extended: true}));
 
 //4 
 app.post("/create-item", (req, res) => {
-     console.log(req.body);
+     console.log("user entered /create-item");
      const new_reja = req.body.reja;
       db.collection("plans").insertOne({reja: new_reja}, (err, data)  => {
         if (err) {
@@ -88,7 +88,7 @@ app.post("/create-item", (req, res) => {
 // });
 
 app.get("/", function (req, res) {
-    console.log("user entered/");
+    console.log("user entered /");
     db.collection("plans")
     .find()
     .toArray((err,data) => {
@@ -97,7 +97,7 @@ app.get("/", function (req, res) {
             res.end("something went wrong");
         } else {
             console.log(data);
-            res.render("reja",{items:data});
+            res.render("reja", {items:data});
               
         }
     });
