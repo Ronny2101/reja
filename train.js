@@ -176,38 +176,23 @@ class Shop {
     this.suv = suv;
   }
 
-  qoldiq() {
+  savat() {
     const vaqt = moment().format('HH:mm:ss');
     console.log(`${vaqt} sizda hozir ${this.non} ta non, ${this.lapsha} ta lagmon, ${this.suv} ta suv bor`);
   }
 
   sotish(nomi, miqdor) {
-    const vaqt = moment().format('HH:mm:ss');
-
-    if (this[nomi] === undefined) {
-      console.log(`${vaqt} Bunday mahsulot yo‘q`);
-      return;
-    }
-
-    if (this[nomi] < miqdor) {
-      console.log(`${vaqt} Sizda ${miqdor} ta ${nomi} mahsuloti yo‘q, faqat ${this[nomi]} ta ${nomi} bor`);
-      return;
-    }
+   const vaqt = moment().format('HH:mm:ss');
 
     this[nomi] -= miqdor;
     console.log(`${vaqt} Hozir ${miqdor} ta ${nomi} sotildi`);
   }
 
-  qabul(nomi, miqdor) {
-    const vaqt = moment().format('HH:mm:ss');
-
-    if (this[nomi] === undefined) {
-      console.log(`${vaqt} Bunday mahsulot yo‘q`);
-      return;
-    }
-
+  xarid(nomi, miqdor) {
+     const vaqt = moment().format('HH:mm:ss');
+ 
     this[nomi] += miqdor;
-    console.log(`${vaqt} Siz hozir ${miqdor} ta ${nomi} qabul qilib oldingiz`);
+    console.log(`${vaqt} Siz hozir ${miqdor} ta ${nomi} xarid qilib oldingiz`);
   }
 }
 
@@ -217,15 +202,15 @@ console.log("Shopping");
 
  
 setTimeout(() => {
-  shop.qoldiq();
+  shop.savat();
 }, 1000);  
 setTimeout(() => {
   shop.sotish('non', 3);
 }, 2000);  
 setTimeout(() => {
-  shop.qabul('suv', 4);
+  shop.xarid('suv', 4);
 }, 3000);  
 setTimeout(() => {
-  shop.qoldiq();
+  shop.savat();
 }, 4000);  
  
