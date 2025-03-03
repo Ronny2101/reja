@@ -41,6 +41,7 @@ const http = require("http");
 //const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
+const mongodb =require("mongodb");
 
 let user;
 fs.readFile("database/user.json", "utf8",(err,data) => {
@@ -70,23 +71,34 @@ app.use(express.urlencoded({ extended: true}));
 
 //4 
 app.post("/create-item", (req, res) => {
-     console.log("user entered /create-item");
-     const new_reja = req.body.reja;
-      db.collection("plans").insertOne({reja: new_reja}, (err, data)  => {
+    console.log("user entered /create-item");
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({reja: new_reja}, (err, data)  => {
         res.json(data.ops[0]);
-      });
+    });
 });
 
 // app.get("/author", (req, res) => {
 //    // res.send("Hello Author");
 //     res.render("author",{ user: user });
 // });
+app.post("/delete-item", (req, res)  => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) },
+        function (err, data) {
+         res.json({state: "succes"});
+        }
+    );
+});
+
+
 
 app.get("/", function (req, res) {
     console.log("user entered /");
     db.collection("plans")
     .find()
-    .toArray((err,data) => {
+    .toArray((err, data) => {
         if (err) {
             console.log(err);
             res.end("something went wrong");

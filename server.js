@@ -1,5 +1,8 @@
 const http = require("http");
 const  mongodb = require("mongodb");
+const express = require('express');
+const app = express();
+ 
 
 let db;
 const connectionString = "mongodb+srv://dilshoddaminov2121:Zza4FtRyNhoAE4wI@cluster0.hesqy.mongodb.net/REJA";
@@ -18,7 +21,7 @@ mongodb.connect(connectionString, {
             let PORT = 3000;
             server.listen(PORT, function () {
                 console.log(`The server is running succesfully on port: ${PORT}, http://localhost:${PORT}`
-                    
+
                 );
             });
   
@@ -26,3 +29,6 @@ mongodb.connect(connectionString, {
     }
 
 );
+
+
+module.exports = app;
