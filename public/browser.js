@@ -19,9 +19,12 @@ function itemTemplate(item) {
                   </div>
                 </li>`;
 }
+
+let createField = document.getElementById("create-field");
+
 document
-.getElementById("create-form").addEventListener("submit", function (e) {
-   e.preventDefault();
+.getElementById("create-form").addEventListener("submit", function (event) {
+   event.preventDefault();
 
    axios
    .post("/create-item",{reja: createField.value})
@@ -37,16 +40,16 @@ document
    });
 });
 
-document.addEventListener("click", function (e) {
+document.addEventListener("click", function (event) {
    //delete
-   console.log(e.target);
-   if(e.target.classList.contains("delete-me")) {
+   console.log(event.target);
+   if(event.target.classList.contains("delete-me")) {
       if(confirm("Aniq o'chirmoqchimisiz")) {
         axios
-        .post("/delete-item", { id: e.target.getAttribute("data-id")}) 
+        .post("/delete-item", { id: event.target.getAttribute("data-id")}) 
         .then((respose) => {
           console.log(respose.data);
-          e.target.parentElement.parentElement.remove();
+          event.target.parentElement.parentElement.remove();
         })
         .catch((err) => {
           console.log("iltimos qaytadan harakat qiling");
@@ -55,7 +58,7 @@ document.addEventListener("click", function (e) {
    }
 
   //edit
-   if(e.target.classList.contains("edit-me")) {
+   if(event.target.classList.contains("edit-me")) {
     alert("siz edit tugmasini bosdingiz");
  }
 });

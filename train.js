@@ -151,15 +151,81 @@
 
 
 
-function countDigits(str) {
-     let count = 0;
-     for (let i = 0; i< str.length; i++) {
-          if (str[i] >= '0' || str[i]<='9') {
-               count++;
-          }
-     }
-     return count;
+// function countDigits(str) {
+//      let count = 0;
+//      for (let i = 0; i< str.length; i++) {
+//           if (str[i] >= '0' || str[i]<='9') {
+//                count++;
+//           }
+//      }
+//      return count;
+// }
+
+// console.log(countDigits("guyd7e27736764gdyg"));
+ 
+
+//task c
+
+
+const moment = require('moment');
+
+class Shop {
+  constructor(non, lapsha, suv) {
+    this.non = non;
+    this.lapsha = lapsha;
+    this.suv = suv;
+  }
+
+  qoldiq() {
+    const vaqt = moment().format('HH:mm:ss');
+    console.log(`${vaqt} sizda hozir ${this.non} ta non, ${this.lapsha} ta lagmon, ${this.suv} ta suv bor`);
+  }
+
+  sotish(nomi, miqdor) {
+    const vaqt = moment().format('HH:mm:ss');
+
+    if (this[nomi] === undefined) {
+      console.log(`${vaqt} Bunday mahsulot yo‘q`);
+      return;
+    }
+
+    if (this[nomi] < miqdor) {
+      console.log(`${vaqt} Sizda ${miqdor} ta ${nomi} mahsuloti yo‘q, faqat ${this[nomi]} ta ${nomi} bor`);
+      return;
+    }
+
+    this[nomi] -= miqdor;
+    console.log(`${vaqt} Hozir ${miqdor} ta ${nomi} sotildi`);
+  }
+
+  qabul(nomi, miqdor) {
+    const vaqt = moment().format('HH:mm:ss');
+
+    if (this[nomi] === undefined) {
+      console.log(`${vaqt} Bunday mahsulot yo‘q`);
+      return;
+    }
+
+    this[nomi] += miqdor;
+    console.log(`${vaqt} Siz hozir ${miqdor} ta ${nomi} qabul qilib oldingiz`);
+  }
 }
 
-console.log(countDigits("guyd7e27736764gdyg"));
+// chek
+const shop = new Shop(4, 5, 2);
+console.log("Shopping");
+
+ 
+setTimeout(() => {
+  shop.qoldiq();
+}, 1000);  
+setTimeout(() => {
+  shop.sotish('non', 3);
+}, 2000);  
+setTimeout(() => {
+  shop.qabul('suv', 4);
+}, 3000);  
+setTimeout(() => {
+  shop.qoldiq();
+}, 4000);  
  
