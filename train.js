@@ -167,50 +167,14 @@
 //task c
 
 
-const moment = require('moment');
+// 
 
-class Shop {
-  constructor(non, lapsha, suv) {
-    this.non = non;
-    this.lapsha = lapsha;
-    this.suv = suv;
-  }
 
-  savat() {
-    const vaqt = moment().format('HH:mm:ss');
-    console.log(`${vaqt} sizda hozir ${this.non} ta non, ${this.lapsha} ta lagmon, ${this.suv} ta suv bor`);
-  }
+//Tack D
 
-  sotish(nomi, miqdor) {
-   const vaqt = moment().format('HH:mm:ss');
+function checkContent(string1,string2) {
+  return string1.split("").sort().join("") === string2.split("").sort().join("");
 
-    this[nomi] -= miqdor;
-    console.log(`${vaqt} Hozir ${miqdor} ta ${nomi} sotildi`);
-  }
-
-  xarid(nomi, miqdor) {
-     const vaqt = moment().format('HH:mm:ss');
- 
-    this[nomi] += miqdor;
-    console.log(`${vaqt} Siz hozir ${miqdor} ta ${nomi} xarid qilib oldingiz`);
-  }
 }
 
-// chek
-const shop = new Shop(4, 5, 2);
-console.log("Shopping");
-
- 
-setTimeout(() => {
-  shop.savat();
-}, 1000);  
-setTimeout(() => {
-  shop.sotish('non', 3);
-}, 2000);  
-setTimeout(() => {
-  shop.xarid('suv', 4);
-}, 3000);  
-setTimeout(() => {
-  shop.savat();
-}, 4000);  
- 
+console.log(checkContent("mitgroup","groupmit"));
