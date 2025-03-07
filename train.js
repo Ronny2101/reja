@@ -179,9 +179,12 @@
 
 // console.log(checkContent("mitgroup","groupmit"));
 
-      function getReverse(string1,) {
-       return string1.split("").reverse().join("");  
-      }
+      
+// E Task
+
+// function getReverse(string1,) {
+//        return string1.split("").reverse().join("");  
+//       }
      
-     console.log(getReverse("hello"));
+//      console.log(getReverse("hello"));
      
