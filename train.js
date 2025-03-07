@@ -172,9 +172,16 @@
 
 //Tack D
 
-function checkContent(string1,string2) {
-  return string1.split("").sort().join("") === string2.split("").sort().join("");
+// function checkContent(string1,string2) {
+//   return string1.split("").sort().join("") === string2.split("").sort().join("");
 
-}
+// }
 
-console.log(checkContent("mitgroup","groupmit"));
+// console.log(checkContent("mitgroup","groupmit"));
+
+      function getReverse(string1,) {
+       return string1.split("").reverse().join("");  
+      }
+     
+     console.log(getReverse("hello"));
+     
