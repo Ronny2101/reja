@@ -188,3 +188,12 @@
      
 //      console.log(getReverse("hello"));
      
+
+//Task F
+
+function findDoublers(str) {
+     return str.split("").some((char, i) => str.indexOf(char) !== i);
+ }
+ 
+ 
+ console.log(findDoublers("hello")); 
